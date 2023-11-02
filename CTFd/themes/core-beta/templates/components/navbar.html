@@ -52,6 +52,14 @@
           </li>
         {% endif %}
 
+        {% if Configs.account_visibility != 'admins' and Configs.score_visibility != 'admins' %}
+          <li class="nav-item">
+            <a class="nav-link" href="/qualified_scoreboard">
+              {% trans %}Qualified Scoreboard{% endtrans %}
+            </a>
+          </li>
+        {% endif %}
+
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('challenges.listing') }}">
             {% trans %}Challenges{% endtrans %}

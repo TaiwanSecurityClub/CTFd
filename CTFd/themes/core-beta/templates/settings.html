@@ -25,6 +25,11 @@
               role="tab"
           >{% trans %}Access Tokens{% endtrans %}
           </button>
+          <button
+              class="nav-link" id="settings-tokens-tab" data-bs-toggle="pill" data-bs-target="#qualify"
+              role="tab"
+          >{% trans %}Qualification Code{% endtrans %}
+          </button>
         </div>
       </div>
 
@@ -254,6 +259,54 @@
               </div>
             {% endif %}
 
+          </div>
+
+          <div class="tab-pane fade" id="qualify" role="tabpanel">
+            {% include "components/errors.html" %}
+
+            {% with form = Forms.self.QualifyForm() %}
+              <form
+                  method="post" accept-charset="utf-8" autocomplete="off" role="form"
+                  x-data="QualifyForm"
+                  @submit.prevent="codeQualify()"
+                  class="form-horizontal"
+              >
+
+                <div class="mb-3">
+                  <b>{{ form.code.label(class="form-label") }}</b>
+                  {{ form.code(class="form-control", value=code) }}
+                </div>
+
+                <div id="results" class="mb-3">
+                  <div
+                      class="alert alert-success alert-dismissible submit-row" role="alert"
+                      x-cloak="success" x-show="success"
+                  >
+                    <strong>Success!</strong>
+                    {% trans %}Your are now qualified!{% endtrans %}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                  </div>
+
+
+                  <template x-for="(msg, idx) in errors" :key="idx">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                      <span class="sr-only">{% trans %}Error:{% endtrans %}</span>
+                      <span x-text="msg"></span>
+                      <button
+                          type="button" class="btn-close" data-bs-dismiss="alert"
+                          aria-label="Close"
+                      >
+                      </button>
+                    </div>
+                  </template>
+                </div>
+
+                <div class="mb-3">
+                  {{ form.submit(class="btn btn-primary float-end px-4") }}
+                </div>
+              </form>
+            {% endwith %}
           </div>
         </div>
       </div>

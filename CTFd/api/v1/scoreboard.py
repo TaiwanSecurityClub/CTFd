@@ -1,4 +1,5 @@
 from collections import defaultdict
+from flask import request
 
 from flask_restx import Namespace, Resource
 from sqlalchemy import select
@@ -85,8 +86,12 @@ class ScoreboardDetail(Resource):
     @cache.cached(timeout=60, key_prefix=make_cache_key)
     def get(self, count):
         response = {}
+        
+        qualify = request.args.get('qualify')
+        if qualify != None:
+            qualify = True
 
-        standings = get_standings(count=count)
+        standings = get_standings(count=count, qualify=qualify)
 
         team_ids = [team.account_id for team in standings]
 

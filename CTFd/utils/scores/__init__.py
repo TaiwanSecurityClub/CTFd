@@ -8,7 +8,9 @@ from CTFd.utils.modes import get_model
 
 
 @cache.memoize(timeout=60)
-def get_standings(count=None, admin=False, fields=None):
+def get_standings(count=None, admin=False, fields=None, qualify=False):
+    from CTFd.plugins.qualify import QualifyUsers
+
     """
     Get standings as a list of tuples containing account_id, name, and score e.g. [(account_id, team_name, score)].
 
@@ -115,6 +117,9 @@ def get_standings(count=None, admin=False, fields=None):
             )
         )
 
+    if qualify:
+        standings_query = standings_query.join(QualifyUsers,Model.email == QualifyUsers.email).filter(QualifyUsers.qualified == True)
+    
     """
     Only select a certain amount of users if asked.
     """

@@ -55,6 +55,7 @@ export default defineConfig({
         settings: resolve(__dirname, "assets/js/settings.js"),
         challenges: resolve(__dirname, "assets/js/challenges.js"),
         scoreboard: resolve(__dirname, "assets/js/scoreboard.js"),
+        qualified_scoreboard: resolve(__dirname, "assets/js/qualified_scoreboard.js"),
         notifications: resolve(__dirname, "assets/js/notifications.js"),
         teams_public: resolve(__dirname, "assets/js/teams/public.js"),
         teams_private: resolve(__dirname, "assets/js/teams/private.js"),
