@@ -32,12 +32,9 @@ class QualifyForm(BaseForm):
 class QualifyUsers(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     email = db.Column(db.String(128), unique = True)
-    code = db.Column(db.String(32))
-    qualified = db.Column(db.Boolean, default = False)
 
     def __init__(self, email):
         self.email = email
-        self.code = ''.join(random.choice(string.ascii_letters) for _ in range(32))
 
 def init_code():
     if not os.path.exists('./emails.txt'):
@@ -54,24 +51,7 @@ def init_code():
 
 def load(app):
     app.db.create_all()
-    Forms.self.QualifyForm = QualifyForm
-    init_code()
-    
-    @authed_only
-    @app.route('/user/qualify',methods=['POST'])
-    def qualify_user():
-        code = request.json['code']
-        if code == None or code == '':
-            return {"success": False, "errors": ["Your qualification code is empty."]}
-        user = get_current_user()
-        q_user = QualifyUsers.query.filter_by(email = user.email).first()
-        if q_user.qualified:
-            return {"success": False, "errors": ["You have already qualified."]}
-        if code == q_user.code:
-            setattr(q_user, 'qualified', True)
-            db.session.commit()
-            return {"success": True}
-        return {"success": False, "errors": ["Qualification failed."]}
+    Forms.self.QualifyForm = QualifyForm    
     
     @check_account_visibility
     @check_score_visibility

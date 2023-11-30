@@ -118,7 +118,7 @@ def get_standings(count=None, admin=False, fields=None, qualify=False):
         )
 
     if qualify:
-        standings_query = standings_query.join(QualifyUsers,Model.email == QualifyUsers.email).filter(QualifyUsers.qualified == True)
+        standings_query = standings_query.join(QualifyUsers,Model.email == QualifyUsers.email)
     
     """
     Only select a certain amount of users if asked.

@@ -97,40 +97,5 @@ Alpine.data("Tokens", () => ({
   },
 }));
 
-Alpine.data("QualifyForm", () => ({
-  success: null,
-  error: null,
-  errors: [],
-  async codeQualify() {
-    this.success = null;
-    this.error = null;
-    this.errors = [];
-    const data = serializeJSON(this.$el);
-    
-    let response = await CTFd.fetch("/user/qualify", {
-      method: "POST",
-      body: JSON.stringify(data)
-    });
-    response = await response.json();
-
-    if (response.success) {
-      this.success = true;
-      this.error = false;
-
-      setTimeout(() => {
-        this.success = null;
-        this.error = null;
-      }, 3000);
-    } else {
-      this.success = false;
-      this.error = true;
-
-      Object.keys(response.errors).map(error => {
-        const error_msg = response.errors[error];
-        this.errors.push(error_msg);
-      });
-    }
-  }
-}))
 
 Alpine.start();
