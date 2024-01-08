@@ -1,6 +1,6 @@
 <div :class="getStyles()" role="document" x-data="Challenge" x-init="id = {{ challenge.id }}">
-  <div class="modal-content">
-    <div class="modal-body py-4 px-4 px-sm-5">
+  <div class="challenge-modal modal-content">
+    <div class="challenge-modal-body modal-body py-4 px-4 px-sm-5">
 
       <div>
         <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -27,16 +27,18 @@
       <div>
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane fade show active" id="challenge">
-            <h2 class="challenge-name text-center pt-3">
-              {{ challenge.name }}
-            </h2>
-            <h3 class="challenge-value text-center">
-              {{ challenge.value }}
-            </h3>
+            <div class="challenge-title">
+              <h1 class="challenge-name pt-3">
+                {{ challenge.name }}
+              </h1>
+              <h3 class="challenge-value pt-3">
+                {{ challenge.value }}
+              </h3>
+            </div>
 
 
             {% if tags %}
-              <div class="challenge-tags text-center pt-2 pb-3">
+              <div class="challenge-tags text-left pt-2 pb-3">
                 {% block tags %}
                   {% for tag in tags %}
                     <span class="challenge-tag badge bg-info">{{ tag }}</span>
@@ -44,6 +46,7 @@
                 {% endblock %}
               </div>
             {% endif %}
+            
 
             <span class="challenge-desc">{% block description %}{{ challenge.html }}{% endblock %}</span>
 
@@ -132,7 +135,7 @@
                       id="challenge-input" class="challenge-input form-control"
                       type="text" name="submission"
                       @keyup.enter="submitChallenge()"
-                      placeholder="{% trans %}Flag{% endtrans %}" x-model="submission"
+                      placeholder="{% trans %}TSC{...}{% endtrans %}" x-model="submission"
                   >
                 {% endblock %}
               </div>

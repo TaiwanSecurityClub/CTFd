@@ -18,3 +18,42 @@
   opacity: 0.6;
   border: none;
 }
+
+.challenge-title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.challenge-name {
+  border-bottom: 8px solid rgb(73, 13, 168);
+  border-radius: 5px;
+}
+.challenge-value::before{
+  font-family: "Font Awesome 6 Free"; font-weight: 900; content: "\f578";
+}
+
+.challenge-modal {
+  background-color: rgba(212, 160, 255, 0.925); 
+}
+
+.challenge-modal-body {
+  border: 20px solid rgba(145, 84, 194, 0.925); 
+  border-radius: 5px;
+}
+
+.challenge-input {
+  background-color: rgba(212, 160, 255, 0.925) !important;
+  color: black !important;
+  border: 2px solid rgb(73, 13, 168) !important;
+}
+
+.challenge-tag {
+  background-color: rgb(60, 193, 255) !important;
+}
+
+.challenge-submit {
+  background-color: rgb(73, 13, 168);
+  color: white;
+}
