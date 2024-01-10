@@ -1,27 +1,27 @@
 <div :class="getStyles()" role="document" x-data="Challenge" x-init="id = {{ challenge.id }}">
   <div class="challenge-modal modal-content">
-    <div class="challenge-modal-body modal-body py-4 px-4 px-sm-5">
 
+    <ul class="nav flex-column challenge-nav">
+      <li class="nav-item challeng-nav-item">
+        <a class="nav-link active" data-bs-target="#challenge" @click="showChallenge()">
+          {% trans %}Challenge{% endtrans %}
+        </a>
+      </li>
+
+      {% block solves %}
+        <li class="nav-item challeng-nav-item">
+          <a class="nav-link challenge-solves" data-bs-target="#solves" @click="showSolves()">
+            {% if solves != None %}
+              {{ ngettext("%(num)d Solve", "%(num)d Solves", solves) }}
+            {% endif %}
+          </a>
+        </li>
+      {% endblock %}
+    </ul>
+
+    <div class="challenge-modal-body modal-body py-4 px-4 px-sm-5">
       <div>
         <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
-
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <a class="nav-link active" data-bs-target="#challenge" @click="showChallenge()">
-              {% trans %}Challenge{% endtrans %}
-            </a>
-          </li>
-
-          {% block solves %}
-            <li class="nav-item">
-              <a class="nav-link challenge-solves" data-bs-target="#solves" @click="showSolves()">
-                {% if solves != None %}
-                  {{ ngettext("%(num)d Solve", "%(num)d Solves", solves) }}
-                {% endif %}
-              </a>
-            </li>
-          {% endblock %}
-        </ul>
       </div>
 
       <div>

@@ -27,33 +27,50 @@
 }
 
 .challenge-name {
-  border-bottom: 8px solid rgb(73, 13, 168);
+  border-bottom: 8px solid #371a91;
   border-radius: 5px;
 }
 .challenge-value::before{
   font-family: "Font Awesome 6 Free"; font-weight: 900; content: "\f578";
 }
 
+.challenge-nav {
+  position: absolute;
+  right: 100%;
+  top: 5px;
+  z-index: 0;
+  gap: 10px;
+}
+.challeng-nav-item {
+  width: 150px;
+  background-color: #d7c6fd;
+  border: 3px solid #ab8dfd;
+  border-right: none;
+  border-radius: 3px;
+}
+
 .challenge-modal {
-  background-color: rgba(212, 160, 255, 0.925); 
+  position: relative;
+  background-color: #d7c6fd;
 }
 
 .challenge-modal-body {
-  border: 20px solid rgba(145, 84, 194, 0.925); 
+  z-index: 1;
+  border: 20px solid #ab8dfd; 
   border-radius: 5px;
 }
 
 .challenge-input {
-  background-color: rgba(212, 160, 255, 0.925) !important;
+  background-color: #d7c6fd !important;
   color: black !important;
-  border: 2px solid rgb(73, 13, 168) !important;
+  border: 2px solid #371a91 !important;
 }
 
 .challenge-tag {
-  background-color: rgb(60, 193, 255) !important;
+  background-color: #75a7ff !important;
 }
 
 .challenge-submit {
-  background-color: rgb(73, 13, 168);
+  background-color: #371a91;
   color: white;
 }
