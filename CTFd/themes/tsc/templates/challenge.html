@@ -5,6 +5,17 @@
       <li class="nav-item challeng-nav-item">
         <a class="nav-link active" data-bs-target="#challenge" @click="showChallenge()">
           {% trans %}Challenge{% endtrans %}
+          {% if solved_by_me %}
+            <img class="nav-link"
+              style="width: 145px;padding: 0;" 
+              src="{{ url_for('views.themes', theme='tsc', path='img/cat_success.png') }}">
+            </img>
+          {% else %}
+            <img class="nav-link"
+              style="width: 145px;padding: 0;" 
+              src="{{ url_for('views.themes', theme='tsc', path='img/cat_fail.png') }}">
+            </img>
+          {% endif %}
         </a>
       </li>
 

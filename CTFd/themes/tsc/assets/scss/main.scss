@@ -89,5 +89,9 @@ select.form-control {
 //TSC SCSS
 .bg-nav{
   --bs-bg-opacity: 1;
-  background-color: #371a91;
+  background-color: #ab95a6;
+}
+
+body{
+  background-image: linear-gradient(180deg, rgba(231,218,247) 0%, rgba(231,218,247) 5%, rgba(250,246,255) 18%, rgba(255,255,255,1) 100%);
 }

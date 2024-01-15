@@ -36,7 +36,7 @@
 
 .challenge-nav {
   position: absolute;
-  right: 100%;
+  right: 103%;
   top: 5px;
   z-index: 0;
   gap: 10px;
@@ -44,9 +44,10 @@
 .challeng-nav-item {
   width: 150px;
   background-color: #d7c6fd;
-  border: 3px solid #ab8dfd;
+  text-align: center;
   border-right: none;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .challenge-modal {

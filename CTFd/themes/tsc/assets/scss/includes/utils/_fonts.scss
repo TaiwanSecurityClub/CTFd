@@ -23,12 +23,19 @@ $fa-font-path: "../webfonts";
 // @import "~/@fontsource/lato/index.css";
 // @import "~/@fontsource/lato/index.css";
 
+@font-face {
+  font-family: "SFPro";
+  src: url(../webfonts/SF-PRO-Rounded.ttf) format("truetype"),
+       url(../webfonts/SF-PRO-Rounded.woff) format("woff");
+}
+
 html,
 body,
 .container {
-  font-family: "Lato", sans-serif;
+  font-family: "SFPro", sans-serif;
 }
 
 .jumbotron .container {
-  font-family: "Raleway", sans-serif;
+  font-family: "SFPro", sans-serif;
 }
+

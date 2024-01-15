@@ -39,6 +39,10 @@ export default defineConfig({
               src: "./assets/img/**",
               dest: "static/img",
             },
+            {
+              src: "./assets/fonts/*",
+              dest: "static/webfonts",
+            },
           ],
           hook: "writeBundle",
         }),
