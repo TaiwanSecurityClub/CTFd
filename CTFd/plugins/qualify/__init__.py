@@ -52,7 +52,7 @@ def init_code():
 def load(app):
     app.db.create_all()
     Forms.self.QualifyForm = QualifyForm    
-    
+    init_code()
     @check_account_visibility
     @check_score_visibility
     @app.route("/qualified_scoreboard")
