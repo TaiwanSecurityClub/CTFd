@@ -2,6 +2,7 @@ CTFd/themes/**/vendor/
 CTFd/themes/core/
 CTFd/themes/core-beta/**/*
 CTFd/themes/admin/static/**/*
+CTFd/themes/tsc/**/*
 *.html
 *.njk
 *.png
@@ -11,6 +12,9 @@ CTFd/themes/admin/static/**/*
 *.svg
 *.mp3
 *.webm
+*.ttf
+*.woff
+*.jpg
 .pytest_cache
 venv*
 .venv*

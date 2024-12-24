@@ -1,5 +1,4 @@
 from collections import defaultdict
-from flask import request
 
 from flask import request
 from flask_restx import Namespace, Resource
@@ -98,9 +97,9 @@ class ScoreboardDetail(Resource):
     )
     def get(self, count):
         response = {}
-        
-        qualify = request.args.get('qualify')
-        if qualify != None:
+
+        qualify = request.args.get("qualify")
+        if qualify is not None:
             qualify = True
 
         # Optional filters

@@ -129,8 +129,10 @@ def get_standings(count=None, bracket_id=None, admin=False, fields=None, qualify
     # Only select a certain amount of users if asked.
 
     if qualify:
-        standings_query = standings_query.join(QualifyUsers,Model.email == QualifyUsers.email)
-    
+        standings_query = standings_query.join(
+            QualifyUsers, Model.email == QualifyUsers.email
+        )
+
     if count is None:
         standings = standings_query.all()
     else:
