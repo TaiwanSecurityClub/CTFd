@@ -21,7 +21,7 @@
     ]
   },
   "assets/js/settings.js": {
-    "file": "assets/settings.64728c4b.js",
+    "file": "assets/settings.b8899831.js",
     "src": "assets/js/settings.js",
     "isEntry": true,
     "imports": [
@@ -38,11 +38,23 @@
     ]
   },
   "assets/js/scoreboard.js": {
-    "file": "assets/scoreboard.b1c04d97.js",
+    "file": "assets/scoreboard.21482fab.js",
     "src": "assets/js/scoreboard.js",
     "isEntry": true,
     "imports": [
       "assets/js/index.js",
+      "_scoreboard.bfeb658d.js",
+      "_index.1cf73b05.js",
+      "_echarts.128204f2.js"
+    ]
+  },
+  "assets/js/qualified_scoreboard.js": {
+    "file": "assets/qualified_scoreboard.ac0e63b6.js",
+    "src": "assets/js/qualified_scoreboard.js",
+    "isEntry": true,
+    "imports": [
+      "assets/js/index.js",
+      "_scoreboard.bfeb658d.js",
       "_index.1cf73b05.js",
       "_echarts.128204f2.js"
     ]
@@ -128,6 +140,13 @@
     "file": "assets/clipboard.0c9c5ddd.js",
     "imports": [
       "assets/js/index.js"
+    ]
+  },
+  "_scoreboard.bfeb658d.js": {
+    "file": "assets/scoreboard.bfeb658d.js",
+    "imports": [
+      "assets/js/index.js",
+      "_index.1cf73b05.js"
     ]
   },
   "_index.1cf73b05.js": {
