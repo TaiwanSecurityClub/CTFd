@@ -93,7 +93,9 @@ class ScoreboardDetail(Resource):
     @check_score_visibility
     @cache.cached(
         timeout=60,
-        key_prefix=make_cache_key_with_query_string(allowed_params=["qualify", "bracket_id"]),
+        key_prefix=make_cache_key_with_query_string(
+            allowed_params=["qualify", "bracket_id"]
+        ),
     )
     def get(self, count):
         response = {}
