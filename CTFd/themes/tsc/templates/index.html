@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <img class="w-100 mx-auto d-block" style="max-width: 500px;padding: 50px;padding-top: 14vh;" src="{{ url_for('views.themes', theme='tsc', path='img/logo.png') }}" />
+        <h3 class="text-center">
+            <p>Follow us on social media:</p>
+            <a href="https://www.facebook.com/profile.php?id=61552584062920&locale=zh_TW"><i class="fab fa-facebook fa-2x" aria-hidden="true"></i></a>&nbsp;
+        </h3>
+        <br>
+
+    </div>
+</div>
+<h1 class="text-center">
+    <p>Sponsors</p>
+</h1>
+<div style="display: flex;justify-self: center;">
+    <a style="margin: 2%;" target="_blank" href="https://www.nics.nat.gov.tw/"><img width="300px" src="{{ url_for('views.themes', theme='tsc', path='img/logos/資安院_logo.png') }}"></a>
+    <a style="margin: 2%;" target="_blank" href="https://moda.gov.tw/ACS/"><img width="300px" src="{{ url_for('views.themes', theme='tsc', path='img/logos/資安署_logo.png') }}"></a>
+</div>
+<div style="display: flex;justify-self: center;">
+    <a style="margin: 2%;" target="_blank" href="https://trapa.tw/"><img style="clip-path: circle();" width="100px" src="{{ url_for('views.themes', theme='tsc', path='img/logos/TRAPA_logo.png') }}"></a>
+</div>
+
+{% endblock %}
