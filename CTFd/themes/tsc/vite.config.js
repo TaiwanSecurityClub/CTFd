@@ -12,7 +12,7 @@ export default defineConfig({
     },
   },
   build: {
-    manifest: true,
+    manifest: "manifest.json",
     outDir: "static",
     rollupOptions: {
       plugins: [
@@ -36,7 +36,7 @@ export default defineConfig({
               dest: "static/webfonts",
             },
             {
-              src: "./assets/img/**",
+              src: "./assets/img/*",
               dest: "static/img",
             },
             {
