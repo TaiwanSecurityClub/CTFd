@@ -17,8 +17,12 @@
     <p>Sponsors</p>
 </h1>
 <div style="display: inline-flex;justify-content: center; align-items: center;width: 100%;">
-    <a style="margin: 2%;" target="_blank" href="https://moda.gov.tw/ACS/"><img width="300px" src="{{ url_for('views.themes', theme='tsc', path='img/logos/資安署_logo.png') }}"></a>
-    <a style="margin: 2%;" target="_blank" href="https://www.nics.nat.gov.tw/"><img width="300px" src="{{ url_for('views.themes', theme='tsc', path='img/logos/資安院_logo.png') }}"></a>
+    <a style="margin: 2%; cursor: pointer;" onclick="window.open(`{{ url_for('views.themes', theme='tsc', path='img/1資安署中英文簡介.pdf') }}`,'popup','width=600,height=600');">
+        <img width="300px" src="{{ url_for('views.themes', theme='tsc', path='img/logos/資安署_logo.png') }}">
+    </a>
+    <a style="margin: 2%; cursor: pointer;" onclick="window.open(`{{ url_for('views.themes', theme='tsc', path='img/2資安院中英文簡介.pdf') }}`,'popup','width=600,height=600');">
+        <img width="300px" src="{{ url_for('views.themes', theme='tsc', path='img/logos/資安院_logo.png') }}">
+    </a>
     <a style="margin: 1%;" target="_blank" href="https://www.nchc.org.tw/"><img width="300px" src="{{ url_for('views.themes', theme='tsc', path='img/logos/國網中心_logo.png') }}"></a>
 </div>
 <div style="display: inline-flex;justify-content: center; align-items: center;width: 100%;">
